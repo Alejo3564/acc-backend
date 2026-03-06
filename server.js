@@ -254,8 +254,7 @@ app.post('/api/acc/upload', async (req, res) => {
 app.get('/auth/login', (req, res) => {
   const redirectUri = encodeURIComponent(process.env.APS_CALLBACK_URL);
   const scope = encodeURIComponent('data:read data:write data:create account:read');
-  const url = `https://developer.api.autodesk.com/authentication/v2/authorize?response_type=code&client_id=${process.env.APS_CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}`;
-  res.redirect(url);
+  const url = `https://developer.api.autodesk.com/authentication/v2/authorize?response_type=code&client_id=${process.env.APS_CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}&prompt=select_account`;
 });
 
 app.get('/auth/callback', async (req, res) => {
@@ -284,4 +283,5 @@ app.get('/auth/callback', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => console.log(`API running on port ${PORT}`));
