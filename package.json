@@ -1,0 +1,16 @@
+{
+  "name": "acc-backend",
+  "version": "1.0.0",
+  "description": "Backend para listar proyectos/carpetas ACC y subir archivo desde URL a ACC",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  }
+}
